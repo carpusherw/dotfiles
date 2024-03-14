@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-echo Installing dotfiles
+echo 'Installing dotfiles...'
 
+mv ~/.zshrc ~/.zshrc.bak
+cp .zshrc ~/.zshrc
 source ~/.zshrc
