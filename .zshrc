@@ -3,6 +3,12 @@ autoload -Uz compinit && compinit
 
 alias tf="terraform"
 complete -F _minimal tf
+if [[ $(whoami) == "vscode" ]]; then
+    # if running in vscode devcontainers
+    complete -o nospace -C /usr/local/bin/terraform terraform
+else
+    complete -o nospace -C /opt/homebrew/bin/terraform terraform
+fi
 
 alias sz="source ~/.zshrc"
 alias update="brew update && brew upgrade && brew cleanup && brew doctor"
