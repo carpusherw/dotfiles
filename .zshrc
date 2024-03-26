@@ -1,5 +1,6 @@
 alias g="git"
 autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 alias tf="terraform"
 complete -F _minimal tf
