@@ -36,3 +36,9 @@ gh_pr() {
 # Set up the prompt
 setopt PROMPT_SUBST
 PROMPT='%F{blue}[%n@ %1~]%F{green}$(branch_name)%F{white}%F{yellow}$(gh_pr)%F{white}$ '
+
+# Check if GitHub CLI Copilot extension is installed
+if gh extension list | grep -q 'copilot'; then
+    # Add GitHub CLI copilot alias
+    eval "$(gh copilot alias -- zsh)"
+fi
